@@ -1,6 +1,6 @@
-import Image from 'next/image'
-import Link from 'next/link'
-import React from 'react'
+import Image from "next/image";
+import Link from "next/link";
+import React from "react";
 
 export const Footer = () => {
   return (
@@ -8,11 +8,11 @@ export const Footer = () => {
       <section className="flex items-center justify-center rounded-t-2xl bg-white-100 p-4">
         <Link href="/">
           <Image
-            src="/logoFooter.png"
+            src="/logo.svg"
             alt="Logo"
-            className="h-24 w-24 md-5:h-20 md-5:w-20"
-            width={160}
-            height={160}
+            width={80}
+            height={80}
+            quality={100}
           ></Image>
         </Link>
         <ul className="flex flex-col items-start justify-center gap-1 p-2 text-black-100 md-5:gap-2 md-5:text-xs">
@@ -39,5 +39,5 @@ export const Footer = () => {
         </ul>
       </section>
     </footer>
-  )
-}
+  );
+};

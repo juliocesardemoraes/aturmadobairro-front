@@ -10,8 +10,8 @@ const outfit = Outfit({
 })
 
 export const metadata: Metadata = {
-  title: 'Petzitus',
-  description: 'Site da Petzitus',
+  title: 'A turma do bairro',
+  description: 'Site da turma do bairro',
 }
 
 export default function RootLayout({

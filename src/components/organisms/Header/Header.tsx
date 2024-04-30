@@ -1,6 +1,6 @@
-import Image from 'next/image'
-import Link from 'next/link'
-import React from 'react'
+import Image from "next/image";
+import Link from "next/link";
+import React from "react";
 
 export const Header = () => {
   return (
@@ -8,7 +8,7 @@ export const Header = () => {
       <Link href="/">
         <Image
           alt="Logo Petzitus"
-          src="/logoHeader.png"
+          src="/logo.svg"
           width={40}
           height={40}
           aria-label="Logo Petzitus"
@@ -34,5 +34,5 @@ export const Header = () => {
         </li>
       </ul>
     </header>
-  )
-}
+  );
+};
