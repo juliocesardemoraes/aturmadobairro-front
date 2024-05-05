@@ -1,5 +1,6 @@
-import { AdoptCard } from '@/components/molecules/AdoptCard/AdoptCard'
-import React from 'react'
+/* eslint-disable prettier/prettier */
+import { AdoptCard } from "@/components/molecules/AdoptCard/AdoptCard";
+import React from "react";
 
 export const IWantToAdopt = () => {
   return (
@@ -12,5 +13,5 @@ export const IWantToAdopt = () => {
         <AdoptCard />
       </div>
     </section>
-  )
-}
+  );
+};
