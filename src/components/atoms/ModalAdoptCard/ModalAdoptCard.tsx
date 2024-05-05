@@ -1,13 +1,10 @@
 /* eslint-disable prettier/prettier */
-import { handleOpenAndCloseModalProps } from "@/@types";
 import { InputModalAdoptForm } from "../InputModalAdoptForm/InputModalAdoptForm";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
-export const ModalAdoptCard = ({
-  handleOpenAndCloseModal,
-}: handleOpenAndCloseModalProps) => {
+export const ModalAdoptCard = ({ handleOpenAndCloseModal, petPhoto }: any) => {
   return (
     <div className="fixed inset-0 flex min-h-screen w-full items-center justify-center bg-black-100 bg-opacity-70">
       <section className="relative flex w-1/2 flex-col items-center justify-center gap-6 rounded-2xl bg-white-100 p-8 text-black-100 md-5:w-3/4 md-8:w-[92%]">
@@ -23,7 +20,7 @@ export const ModalAdoptCard = ({
         <section className="flex w-full items-center justify-center gap-8 md-9.2:flex-col">
           <div className="flex w-1/2 flex-col items-center justify-center gap-4 md-9.2:w-full">
             <Image
-              src="/heroDog2.png"
+              src={petPhoto}
               className="md-9.2:w-24"
               width={176}
               height={240}
