@@ -46,7 +46,10 @@ export const ModalAdoptCard = ({ handleOpenAndCloseModal, petPhoto }: any) => {
               className="flex w-full flex-col items-center justify-center gap-4"
             >
               <InputModalAdoptForm placeholder="Nome" />
-              <InputModalAdoptForm placeholder="Horários disponíveis" />
+              <InputModalAdoptForm
+                placeholder="Horários disponíveis"
+                type={"datetime-local"}
+              />
               <InputModalAdoptForm placeholder="Cidade" />
               <InputModalAdoptForm placeholder="Idade" />
               <button

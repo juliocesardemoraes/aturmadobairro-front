@@ -8,9 +8,11 @@ import React, { useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import moment from "moment-timezone";
+import Loading from "@/components/loader/Loading";
 
 export const VolunteerForm = () => {
   const [nome, setNome] = useState();
+  const [loading, setLoading] = useState(false);
   const [horasLivres, setHorasLivres] = useState();
   const [cidade, setCidade] = useState();
   const [idade, setIdade] = useState();
@@ -48,6 +50,7 @@ export const VolunteerForm = () => {
         action="#"
         className="flex flex-col items-center justify-center gap-4"
         onSubmit={(e) => {
+          setLoading(true);
           e.preventDefault();
           const myHeaders = new Headers();
           myHeaders.append("Content-Type", "application/json");
@@ -79,7 +82,10 @@ export const VolunteerForm = () => {
                 notify();
               }
             })
-            .catch((error) => console.error(error));
+            .catch((error) => console.error(error))
+            .finally(() => {
+              setLoading(false);
+            });
         }}
       >
         <label className="w-full text-left">Nome</label>
@@ -102,12 +108,27 @@ export const VolunteerForm = () => {
             type={"date"}
           />
         </div>
-        <button
-          type="submit"
-          className="w-full rounded-xl border-2 border-secondary bg-secondary p-4 text-black-100 duration-300 hover:bg-transparent hover:text-secondary md-7:p-2 md-7:text-xs"
-        >
-          Se voluntariar
-        </button>
+        {loading ? (
+          <>
+            <Loading />
+            <button
+              disabled
+              type="submit"
+              className="w-full rounded-xl border-2 border-secondary bg-slate-500 p-4 text-black-100 duration-300 md-7:p-2 md-7:text-xs"
+            >
+              Se voluntariar
+            </button>
+          </>
+        ) : (
+          <>
+            <button
+              type="submit"
+              className="w-full rounded-xl border-2 border-secondary bg-secondary p-4 text-black-100 duration-300 hover:bg-transparent hover:text-secondary md-7:p-2 md-7:text-xs"
+            >
+              Se voluntariar
+            </button>
+          </>
+        )}
       </form>
       <Link href="#" className="flex items-center justify-center gap-2">
         <Image
