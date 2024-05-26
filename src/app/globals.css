@@ -70,3 +70,7 @@ button {
     transform: rotate(360deg);
   }
 }
+
+.black {
+  color: #222 !important;
+}

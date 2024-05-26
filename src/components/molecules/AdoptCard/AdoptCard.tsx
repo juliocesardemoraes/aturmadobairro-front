@@ -42,6 +42,7 @@ export const AdoptCard = ({ pet }: any) => {
         <ModalAdoptCard
           handleOpenAndCloseModal={handleOpenAndCloseModal}
           petPhoto={pet?.photo}
+          petId={pet?.id}
         />
       )}
     </section>
